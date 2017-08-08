@@ -1,2 +1,8 @@
-# twitter-like-bot
-npm install twitter
+# install dependencies
+```
+npm install
+```
+# test 
+```
+npm test
+```
