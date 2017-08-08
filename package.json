@@ -1,0 +1,31 @@
+{
+  "name": "twitter-like-bot",
+  "version": "1.0.0",
+  "description": "the bot likes all tweets with specified keywords",
+  "main": "twitter_like_bot.js",
+  "dependencies": {
+    "events": "^1.1.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node twitter_like_bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma1inowski/twitter-like-bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "autolike",
+    "stream",
+    "twitterapi"
+  ],
+  "author": "Martin Malinowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ma1inowski/twitter-like-bot/issues"
+  },
+  "homepage": "https://github.com/ma1inowski/twitter-like-bot#readme"
+}
