@@ -14,7 +14,7 @@ var likeTweet = function(tweetId) {
     if (err) {
       console.log(err);
     } else {
-      console.log('Liked! - tweet id: '+tweetId);
+      console.log('Liked! - tweet id: '+tweetId.id);
     }
   })
 }
@@ -22,7 +22,7 @@ var likeTweet = function(tweetId) {
 eventEmitter.on('like', likeTweet);
 
 stream.on('data', function(data) {
-  eventEmitter.emit('like', {data:data.id_str});
+  eventEmitter.emit('like', {id:data.id_str});
 })
 stream.on('error', function(err) {
   console.log(err);
