@@ -5,6 +5,8 @@
   "main": "twitter_like_bot.js",
   "dependencies": {
     "events": "^1.1.1",
+    "install": "^0.10.4",
+    "npm": "^5.6.0",
     "twitter": "^1.7.1"
   },
   "devDependencies": {},
