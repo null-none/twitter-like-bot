@@ -1,29 +1,21 @@
 const Twitter = require('twitter');
-const EventEmitter = require('events');
-
-class MyEmitter extends EventEmitter {};
-const myEmitter = new MyEmitter();
-
-var client = new Twitter({
+const client = new Twitter({
   consumer_key: '',
   consumer_secret: '',
   access_token_key: '',
   access_token_secret: ''
 });
 
-var keywords = {track:'keyword, keyword'};
-var stream = client.stream('statuses/filter', keywords);
 
-myEmitter.on('event', (tweetId) => {
-  client.post('favorites/create', {id:tweetId}, (error, response) => {
-    if(error) throw error;
-    console.log(response.text);
-    console.log('Tweet ID: '+response.id_str+' Liked!')
-  });
-});
+
+const stream = client.stream('statuses/filter', {track:'#IlikeBots, #keyword2'});
 
 stream.on('data', (event) => {
-  myEmitter.emit('event', event.id_str);
+  client.post('favorites/create', {id:event.id_str}, (error, response) => {
+    if(error) throw error;
+    console.log('Tweet ID: '+response.id_str+' Liked! - "'+response.text+'"')
+  });
+
 });
 
 stream.on('error', (error) => {
