@@ -6,8 +6,6 @@ const client = new Twitter({
   access_token_secret: ''
 });
 
-
-
 const stream = client.stream('statuses/filter', {track:'#IlikeBots, #keyword2'});
 
 stream.on('data', (event) => {
